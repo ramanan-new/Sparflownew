@@ -7,8 +7,8 @@
 body{margin:0;background:radial-gradient(circle at 10% 10%, #fbfbfb, #f0f0f0);color:#000}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,#ffffff,#f3f3f3);color:#000}
 .brand{font-weight:900;font-size:24px;letter-spacing:1px}
-/* Ensure brand text is always visible on the dark topbar */
-.brand{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,0.4)}
+/* Ensure brand text is bold and black */
+.brand{color:#000;text-shadow:none;font-weight:900}
 .nav a{color:rgba(0,0,0,0.95);margin-right:12px;text-decoration:none;padding:6px;border-radius:6px}
 .nav a:hover{background:rgba(0,0,0,0.04)}
 .actions button{margin-left:8px;padding:8px 12px;border-radius:8px;border:none;background:#fff;color:#000;font-weight:700}
