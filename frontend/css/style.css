@@ -19,17 +19,16 @@ body{margin:0;background:radial-gradient(circle at 10% 10%, #fbfbfb, #f0f0f0);co
 .card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:160px;object-fit:contain}
 .price{color:#000;font-weight:800;margin:8px 0}
-/* Buttons: use light background so text remains black */
-.btn{display:inline-block;padding:8px 12px;background:#f0f0f0;color:#000;border-radius:8px;text-decoration:none;border:none}
-.btn.secondary{background:#e6e6e6;color:#000;} 
-/* Ensure all native buttons have visible, high-contrast text */
-button{font-weight:700;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+/* Buttons: use light background so text remains black, add black outline */
+.btn{display:inline-block;padding:8px 12px;background:#f0f0f0;color:#000;border-radius:8px;text-decoration:none;border:2px solid #000}
+.btn.secondary{background:#e6e6e6;color:#000;border:2px solid #000;} 
+/* Ensure all native buttons have visible, high-contrast text and black outline */
+button{font-weight:700;padding:8px 12px;border-radius:8px;border:2px solid #000;cursor:pointer}
 /* Default primary button style for bare buttons (used in many places) */
 button{background:var(--primary);color:#fff}
-/* Topbar actions should remain light on dark background */
-.topbar .actions button{background:#fff;color:var(--primary)}
-/* Buttons inside white panels should be dark/visible */
-.panel button{background:var(--accent);color:#fff}
+/* Topbar actions should remain light and outlined */
+.topbar .actions button{background:#fff;color:#000;border:2px solid #000}
+.panel button{background:var(--accent);color:#fff;border:2px solid #000}
 .panel .panel-actions button{margin-right:8px}
 .btn.secondary{color:#fff}
 .panel{position:fixed;right:20px;top:80px;width:360px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);border-radius:12px;padding:16px;box-shadow:0 18px 50px rgba(10,10,30,0.06);z-index:90}
