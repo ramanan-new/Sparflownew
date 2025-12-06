@@ -61,11 +61,18 @@ button{background:var(--primary);color:#fff}
 .card .card-accent{height:6px;border-top-left-radius:14px;border-top-right-radius:14px;margin:-14px -14px 10px;background:linear-gradient(90deg,var(--cat-bg,#444),rgba(0,0,0,0.02))}
 
 /* Unique UI: glass floating search */
-/* Search / filter box: white background, black text, outlined */
-.search-glass{display:flex;align-items:center;gap:8px;padding:8px;border-radius:14px;background:#ffffff;box-shadow:0 8px 30px rgba(63,63,100,0.03);backdrop-filter: blur(4px);max-width:900px;margin:0 auto;border:2px solid #000}
+/* Search / filter box: black background, white text, white outline */
+.search-glass{display:flex;align-items:center;gap:8px;padding:8px;border-radius:14px;background:#000;box-shadow:0 8px 30px rgba(0,0,0,0.25);backdrop-filter: blur(4px);max-width:900px;margin:0 auto;border:2px solid #fff}
 
 /* Input inside the search box */
-.search-input{border:none;outline:none;background:transparent;flex:1;font-size:16px;padding:6px 8px;color:#000}
+.search-input{border:none;outline:none;background:transparent;flex:1;font-size:16px;padding:6px 8px;color:#fff}
+.search-input::placeholder{color:#ccc}
+
+/* Make search icon strokes visible on dark background */
+.search-glass svg path, .search-glass svg circle{stroke:#fff}
+
+/* Ensure filter button inside search uses inverted colors */
+.search-glass .btn.secondary{background:transparent;color:#fff;border:2px solid #fff}
 
 /* Ensure form controls and placeholders use dark text */
 input, select, textarea{color:#000}
