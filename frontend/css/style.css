@@ -6,6 +6,8 @@
 body{margin:0;background:radial-gradient(circle at 10% 10%, #fbfbfb, #f0f0f0);color:var(--primary)}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,rgba(0,0,0,0.85),rgba(0,0,0,0.6));color:#fff}
 .brand{font-weight:900;font-size:24px;letter-spacing:1px}
+/* Ensure brand text is always visible on the dark topbar */
+.brand{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,0.4)}
 .nav a{color:rgba(255,255,255,0.95);margin-right:12px;text-decoration:none;padding:6px;border-radius:6px}
 .nav a:hover{background:rgba(255,255,255,0.06)}
 .actions button{margin-left:8px;padding:8px 12px;border-radius:8px;border:none;background:#fff;color:var(--primary);font-weight:700}
