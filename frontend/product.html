@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Product — Sparflow</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header class="topbar"><div class="brand">Sparflow</div></header>
+    <main class="product-page">
+      <div id="productDetail"></div>
+      <a href="/" class="btn">Back to shop</a>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      if (!id) location.href = '/';
+      async function load(){
+        const p = await (await fetch('/api/products/' + id)).json();
+        const reviews = await (await fetch('/api/reviews/product/' + id)).json();
+        const el = document.getElementById('productDetail');
+        el.innerHTML = `
+          <div class="prod-card">
+            <div style="flex:1">
+              <img src="${p.image}" alt="${p.name}" />
+            </div>
+            <div class="prod-info">
+              <div style="display:flex;gap:10px;align-items:center"><h2 style="margin:0">${p.name}</h2><span class="cat-chip" style="background:${categoryColors[p.category]||'#4d96ff'}">${p.category}</span></div>
+              <p class="price">₹${p.price.toFixed(2)}</p>
+              <p>${p.description}</p>
+              <div class="offer">Offer: ${p.offerPercent}% until ${p.offerUntil ? new Date(p.offerUntil).toLocaleDateString() : '—'}</div>
+              <div style="margin-top:8px"><label>Qty</label><input id="qty" value="1" type="number" min="1"/></div>
+              <div style="margin-top:8px"><button id="addBtn" class="btn">Add to cart</button></div>
+              <hr/>
+              <h3>Reviews</h3>
+              <div id="reviewsContainer">
+                <div class="reviews-list">${reviews.map(r=>`<div class="review"><strong>${r.title||''}</strong> <span class="rating">${'★'.repeat(r.rating)}</span><div>${r.body||''}</div></div>`).join('')}</div>
+              </div>
+              <div style="margin-top:10px">
+                <h4>Write a review</h4>
+                <input id="revTitle" placeholder="Title"/>
+                <select id="revRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+                <textarea id="revBody" placeholder="Your thoughts"></textarea>
+                <button id="postReview" class="btn">Submit Review</button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.getElementById('addBtn').addEventListener('click', () => {
+          const q = parseInt(document.getElementById('qty').value || '1', 10);
+          const cart = JSON.parse(localStorage.getItem('cart')||'[]');
+          const found = cart.find(x=>x.id===p.id);
+          if (found) found.qty += q; else cart.push({ id: p.id, qty: q, name: p.name, price: p.price, image: p.image });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Added to cart');
+        });
+
+        document.getElementById('postReview').addEventListener('click', async ()=>{
+          const title = document.getElementById('revTitle').value;
+          const rating = parseInt(document.getElementById('revRating').value,10);
+          const body = document.getElementById('revBody').value;
+          const r = await fetch('/api/reviews/product/' + id, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({rating,title,body}) });
+          const data = await r.json();
+          if (data.error) alert(data.error); else { alert('Thanks for review'); load(); }
+        });
+      }
+      load();
+    </script>
+  </body>
+</html>

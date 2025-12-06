@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sparflow — Shop vibrant</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="brand">Sparflow</div>
+        <div class="category-list" id="categoryList">
+          <div class="category-item" data-cat="for you">For You</div>
+          <div class="category-item" data-cat="fashion">Fashion</div>
+          <div class="category-item" data-cat="mobiles">Mobiles</div>
+          <div class="category-item" data-cat="electronics">Electronics</div>
+          <div class="category-item" data-cat="appliances">Appliances</div>
+          <div class="category-item" data-cat="beauty">Beauty</div>
+          <div class="category-item" data-cat="home">Home</div>
+          <div class="category-item" data-cat="food">Food</div>
+          <div class="category-item" data-cat="medcines">Medcines</div>
+          <div class="category-item" data-cat="toys">Toys</div>
+          <div class="category-item" data-cat="automobiles">Automobiles</div>
+          <div class="category-item" data-cat="sports">Sports</div>
+          <div class="category-item" data-cat="furniture">Furniture</div>
+          <div class="category-item" data-cat="books">Books</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="loginBtn">Login</button>
+        <button id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Bright deals on everything you love</h1>
+        <p>Offers for a limited time — grab them before they end.</p>
+        <div class="banner">
+          <img src="/images/products/phone.svg" style="width:140px;height:100px;object-fit:contain"/>
+          <div>
+            <div style="font-weight:900;font-size:18px">Mega Mobile Sale — Up to 50% off</div>
+            <div class="countdown" id="heroCountdown">Offer ends in: --:--:--</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="filters">
+        <div class="search-glass">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="7" stroke="#999" stroke-width="2"/></svg>
+          <input id="search" placeholder="Search products" style="border:none;outline:none;background:transparent;flex:1;font-size:16px" />
+          <div style="display:flex;gap:8px">
+            <button class="btn secondary" id="filterBtn">Filters</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ads" style="padding:0 20px">
+        <div class="banner">
+          <div style="flex:1"><strong>Today's Deals</strong> — curated offers across categories</div>
+          <img src="/images/logos/gpay.svg" style="height:40px"/>
+        </div>
+      </section>
+
+      <section id="products" class="product-grid"></section>
+    </main>
+
+    <div id="cartPanel" class="panel hidden">
+      <h3>Your Cart</h3>
+      <div id="cartItems"></div>
+      <div class="cart-actions">
+        <select id="paymentMethod">
+          <option value="gpay">GPay</option>
+          <option value="phonepe">PhonePe</option>
+          <option value="navi">Navi</option>
+        </select>
+        <button id="checkoutBtn">Checkout</button>
+        <button id="closeCart">Close</button>
+      </div>
+      <div class="logos">
+        <img src="/images/logos/gpay.svg" alt="gpay"/>
+        <img src="/images/logos/phonepe.svg" alt="phonepe"/>
+        <img src="/images/logos/navi.svg" alt="navi"/>
+      </div>
+    </div>
+
+    <div id="loginPanel" class="panel hidden">
+      <h3>Login / Register</h3>
+      <input id="nameInput" placeholder="Name (register)" />
+      <input id="emailInput" placeholder="Email" />
+      <input id="passwordInput" type="password" placeholder="Password" />
+      <div class="panel-actions">
+        <button id="registerBtn">Register</button>
+        <button id="loginSubmitBtn">Login</button>
+        <button id="closeLogin">Close</button>
+      </div>
+      <div id="userInfo"></div>
+    </div>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>

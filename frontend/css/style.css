@@ -1,0 +1,69 @@
+:root{
+  --bg:#fff; --primary:#ff6b6b; --accent:#4d96ff; --accent-2:#ff9f43; --muted:#666; --card:#ffffff; --glass:rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{margin:0;background:radial-gradient(circle at 10% 10%, #fff8fb, #f3fbff);color:#111}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff}
+.brand{font-weight:900;font-size:24px;letter-spacing:1px}
+.nav a{color:rgba(255,255,255,0.95);margin-right:12px;text-decoration:none;padding:6px;border-radius:6px}
+.nav a:hover{background:rgba(255,255,255,0.08)}
+.actions button{margin-left:8px;padding:8px 12px;border-radius:8px;border:none;background:#fff;color:var(--primary);font-weight:700}
+.hero{padding:36px;text-align:center;background:linear-gradient(90deg,rgba(255,107,107,0.08),rgba(77,150,255,0.06));margin-bottom:12px;border-bottom:1px solid #f0f3f7}
+.hero h1{font-size:34px;color:#111;margin:0}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding:20px}
+.card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(20,20,40,0.06);transition:transform .14s}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;height:160px;object-fit:contain}
+.price{color:var(--primary);font-weight:800;margin:8px 0}
+.btn{display:inline-block;padding:8px 12px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;border:none}
+.btn.secondary{background:var(--accent);}
+.panel{position:fixed;right:20px;top:80px;width:360px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);border-radius:12px;padding:16px;box-shadow:0 18px 50px rgba(10,10,30,0.12);z-index:90}
+.hidden{display:none}
+.cart-actions{display:flex;gap:8px;margin-top:12px}
+.logos img{height:34px;margin-right:8px;margin-top:12px}
+.prod-card{display:flex;gap:20px}
+.prod-card img{width:320px;height:320px;object-fit:contain}
+.offer{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:6px;border-radius:8px;display:inline-block;margin-top:8px;font-weight:700}
+.banner{display:flex;gap:12px;padding:12px;margin:12px 20px;border-radius:12px;background:linear-gradient(90deg, rgba(77,150,255,0.08), rgba(255,159,67,0.06));align-items:center}
+.category-list{display:flex;gap:10px;padding:12px 20px;overflow:auto}
+.category-item{background:#fff;border-radius:10px;padding:8px 12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);white-space:nowrap}
+.rating{color:#f1c40f;font-weight:800}
+.review{border-top:1px solid #f0f2f5;padding-top:8px;margin-top:8px}
+.reviews-list{max-height:220px;overflow:auto}
+.countdown{font-weight:800;color:#333}
+
+/* Category color styles - chips and ribbons */
+.cat-chip{display:inline-block;padding:6px 10px;border-radius:999px;color:#fff;font-weight:700;font-size:12px}
+.ribbon{position:relative;overflow:visible}
+.ribbon:before{content:'';position:absolute;left:-8px;top:-8px;width:80px;height:36px;transform:rotate(-12deg);border-radius:6px;z-index:-1}
+
+/* Animated add-to-cart bubble */
+.add-fly{position:fixed;pointer-events:none;z-index:9999;transition:transform 700ms cubic-bezier(.2,.8,.2,1),opacity .7s}
+
+/* Category-specific colors (mapped in JS to set CSS variables on elements) */
+.cat-fashion{--cat-bg:#ff6b6b}
+.cat-mobiles{--cat-bg:#4d96ff}
+.cat-electronics{--cat-bg:#7b61ff}
+.cat-appliances{--cat-bg:#ff9f43}
+.cat-beauty{--cat-bg:#ff8fb3}
+.cat-home{--cat-bg:#3ad29f}
+.cat-food{--cat-bg:#f7b731}
+.cat-medcines{--cat-bg:#20bf6b}
+.cat-toys{--cat-bg:#f5a623}
+.cat-automobiles{--cat-bg:#34495e}
+.cat-sports{--cat-bg:#0fb9b1}
+.cat-furniture{--cat-bg:#9b59b6}
+.cat-books{--cat-bg:#e67e22}
+
+/* Product card header accent */
+.card .card-accent{height:6px;border-top-left-radius:14px;border-top-right-radius:14px;margin:-14px -14px 10px;background:linear-gradient(90deg,var(--cat-bg,#4d96ff),rgba(0,0,0,0.02))}
+
+/* Unique UI: glass floating search */
+.search-glass{display:flex;align-items:center;gap:8px;padding:12px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.7),rgba(250,250,255,0.6));box-shadow:0 8px 30px rgba(63,63,100,0.06);backdrop-filter: blur(6px);max-width:800px;margin:0 auto}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .prod-card{flex-direction:column}
+  .prod-card img{width:100%;height:auto}
+  .panel{width:90%;left:5%;right:5%}
+}

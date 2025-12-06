@@ -1,0 +1,14 @@
+module.exports = [
+  { name: 'Vibrant T-Shirt', category: 'fashion', price: 299.0, description: 'Bright, comfortable tee for everyday wear.', image: '/images/products/tshirt.svg', offerPercent: 20, offerUntil: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) },
+  { name: 'Smartphone X', category: 'mobiles', price: 19999.0, description: 'Powerful phone with sleek display.', image: '/images/products/phone.svg', offerPercent: 10, offerUntil: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) },
+  { name: 'Blender Pro', category: 'appliances', price: 3499.0, description: 'High speed blender for kitchen.', image: '/images/products/blender.svg', offerPercent: 15, offerUntil: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
+  { name: 'Running Shoes', category: 'sports', price: 2499.0, description: 'Lightweight and comfortable.', image: '/images/products/shoes.svg', offerPercent: 25, offerUntil: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) },
+  { name: 'Fiction Book', category: 'books', price: 399.0, description: 'A gripping novel for weekend reading.', image: '/images/products/book.svg', offerPercent: 5, offerUntil: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000) },
+  { name: 'Noise-Cancel Headphones', category: 'electronics', price: 5999.0, description: 'Deep bass & active noise cancellation.', image: '/images/products/headphones.svg', offerPercent: 18, offerUntil: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000) },
+  { name: 'Kids Toy Car', category: 'toys', price: 799.0, description: 'Battery operated toy car with lights.', image: '/images/products/toycar.svg', offerPercent: 30, offerUntil: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000) },
+  { name: 'Classic Sofa', category: 'furniture', price: 29999.0, description: 'Comfortable 3-seater sofa.', image: '/images/products/sofa.svg', offerPercent: 12, offerUntil: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000) },
+  { name: 'Organic Face Cream', category: 'beauty', price: 899.0, description: 'Gentle and natural moisturizer.', image: '/images/products/cream.svg', offerPercent: 22, offerUntil: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) },
+  { name: 'Car Air Freshener', category: 'automobiles', price: 199.0, description: 'Long lasting pleasant fragrance.', image: '/images/products/airfresh.svg', offerPercent: 10, offerUntil: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000) },
+  { name: 'Protein Bar Pack', category: 'food', price: 499.0, description: 'Healthy snack pack.', image: '/images/products/protein.svg', offerPercent: 15, offerUntil: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000) },
+  { name: 'First Aid Kit', category: 'medcines', price: 1299.0, description: 'Essential medical kit for home.', image: '/images/products/firstaid.svg', offerPercent: 8, offerUntil: new Date(Date.now() + 9 * 24 * 60 * 60 * 1000) }
+];
