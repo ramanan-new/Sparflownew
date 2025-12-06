@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-label="Sparflow Silver Spark Logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f0f0f0" />
+      <stop offset="50%" stop-color="#cfcfcf" />
+      <stop offset="100%" stop-color="#9f9f9f" />
+    </linearGradient>
+    <filter id="s" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0.6" result="b" />
+      <feMerge><feMergeNode in="b"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="160" height="40" rx="8" fill="transparent" />
+  <!-- Spark icon -->
+  <g transform="translate(8,6)">
+    <path d="M10 2 L14 14 L6 10 L18 10 L8 18 z" fill="url(#g)" stroke="#8f8f8f" stroke-width="0.6" filter="url(#s)" />
+    <circle cx="22" cy="8" r="3" fill="#e9e9e9" opacity="0.9" />
+  </g>
+  <!-- Text -->
+  <g transform="translate(48,24)">
+    <text x="0" y="0" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#111">Sparflow</text>
+    <text x="0" y="16" font-family="Inter, Arial, Helvetica, sans-serif" font-size="10" fill="#777">Silver Spark</text>
+  </g>
+</svg>
