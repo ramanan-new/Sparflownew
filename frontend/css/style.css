@@ -3,23 +3,25 @@
 }
 *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
 .body--default{ }
-body{margin:0;background:radial-gradient(circle at 10% 10%, #fbfbfb, #f0f0f0);color:var(--primary)}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,rgba(0,0,0,0.85),rgba(0,0,0,0.6));color:#fff}
+.body--default{ }
+body{margin:0;background:radial-gradient(circle at 10% 10%, #fbfbfb, #f0f0f0);color:#000}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:linear-gradient(90deg,#ffffff,#f3f3f3);color:#000}
 .brand{font-weight:900;font-size:24px;letter-spacing:1px}
 /* Ensure brand text is always visible on the dark topbar */
 .brand{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,0.4)}
-.nav a{color:rgba(255,255,255,0.95);margin-right:12px;text-decoration:none;padding:6px;border-radius:6px}
-.nav a:hover{background:rgba(255,255,255,0.06)}
-.actions button{margin-left:8px;padding:8px 12px;border-radius:8px;border:none;background:#fff;color:var(--primary);font-weight:700}
+.nav a{color:rgba(0,0,0,0.95);margin-right:12px;text-decoration:none;padding:6px;border-radius:6px}
+.nav a:hover{background:rgba(0,0,0,0.04)}
+.actions button{margin-left:8px;padding:8px 12px;border-radius:8px;border:none;background:#fff;color:#000;font-weight:700}
 .hero{padding:36px;text-align:center;background:linear-gradient(90deg,rgba(0,0,0,0.04),rgba(0,0,0,0.02));margin-bottom:12px;border-bottom:1px solid #e6e6e6}
 .hero h1{font-size:34px;color:var(--primary);margin:0}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;padding:20px}
 .card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(20,20,40,0.06);transition:transform .14s}
 .card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:160px;object-fit:contain}
-.price{color:var(--primary);font-weight:800;margin:8px 0}
-.btn{display:inline-block;padding:8px 12px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;border:none}
-.btn.secondary{background:var(--accent);} 
+.price{color:#000;font-weight:800;margin:8px 0}
+/* Buttons: use light background so text remains black */
+.btn{display:inline-block;padding:8px 12px;background:#f0f0f0;color:#000;border-radius:8px;text-decoration:none;border:none}
+.btn.secondary{background:#e6e6e6;color:#000;} 
 /* Ensure all native buttons have visible, high-contrast text */
 button{font-weight:700;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
 /* Default primary button style for bare buttons (used in many places) */
@@ -36,17 +38,17 @@ button{background:var(--primary);color:#fff}
 .logos img{height:34px;margin-right:8px;margin-top:12px}
 .prod-card{display:flex;gap:20px}
 .prod-card img{width:320px;height:320px;object-fit:contain}
-.offer{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:6px;border-radius:8px;display:inline-block;margin-top:8px;font-weight:700}
-.banner{display:flex;gap:12px;padding:12px;margin:12px 20px;border-radius:12px;background:linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));align-items:center}
+.offer{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#000;padding:6px;border-radius:8px;display:inline-block;margin-top:8px;font-weight:700}
+.banner{display:flex;gap:12px;padding:12px;margin:12px 20px;border-radius:12px;background:linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.005));align-items:center}
 .category-list{display:flex;gap:10px;padding:12px 20px;overflow:auto}
-.category-item{background:#fff;border-radius:10px;padding:8px 12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);white-space:nowrap}
-.rating{color:var(--muted);font-weight:800}
+.category-item{background:#fff;border-radius:10px;padding:8px 12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);white-space:nowrap;color:#000}
+.rating{color:#000;font-weight:800}
 .review{border-top:1px solid #f0f2f5;padding-top:8px;margin-top:8px}
 .reviews-list{max-height:220px;overflow:auto}
 .countdown{font-weight:800;color:#333}
 
 /* Simplified monochrome category styles - chips and ribbons */
-.cat-chip{display:inline-block;padding:6px 10px;border-radius:999px;color:#111;background:#efefef;border:1px solid #e1e1e1;font-weight:700;font-size:12px}
+.cat-chip{display:inline-block;padding:6px 10px;border-radius:999px;color:#000;background:#efefef;border:1px solid #e1e1e1;font-weight:700;font-size:12px}
 .ribbon{position:relative;overflow:visible}
 .ribbon:before{content:'';position:absolute;left:-8px;top:-8px;width:80px;height:36px;transform:rotate(-12deg);border-radius:6px;background:linear-gradient(90deg,rgba(0,0,0,0.06),rgba(0,0,0,0.03));z-index:-1}
 
@@ -60,7 +62,12 @@ button{background:var(--primary);color:#fff}
 .card .card-accent{height:6px;border-top-left-radius:14px;border-top-right-radius:14px;margin:-14px -14px 10px;background:linear-gradient(90deg,var(--cat-bg,#444),rgba(0,0,0,0.02))}
 
 /* Unique UI: glass floating search */
-.search-glass{display:flex;align-items:center;gap:8px;padding:12px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.9),rgba(245,245,245,0.9));box-shadow:0 8px 30px rgba(63,63,100,0.03);backdrop-filter: blur(4px);max-width:800px;margin:0 auto}
+.search-glass{display:flex;align-items:center;gap:8px;padding:12px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(250,250,250,0.95));box-shadow:0 8px 30px rgba(63,63,100,0.03);backdrop-filter: blur(4px);max-width:800px;margin:0 auto}
+
+/* Ensure form controls and placeholders use dark text */
+input, select, textarea{color:#000}
+input::placeholder, textarea::placeholder{color:#666}
+button{color:#000}
 
 /* Responsive tweaks */
 @media (max-width:720px){
